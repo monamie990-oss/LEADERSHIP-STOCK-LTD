@@ -44,6 +44,12 @@ class Consultation(ConsultationCreate, TimestampMixin):
     status: ConsultationStatus = ConsultationStatus.PENDING
     notes: Optional[str] = None
     
+    class Config:
+        json_encoders = {
+            date: lambda v: v.isoformat() if v else None,
+            datetime: lambda v: v.isoformat() if v else None
+        }
+    
 # Newsletter Models
 class NewsletterSubscribe(BaseModel):
     email: EmailStr
