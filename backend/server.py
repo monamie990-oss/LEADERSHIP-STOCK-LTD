@@ -85,8 +85,15 @@ async def create_consultation(consultation: ConsultationCreate):
         consultation_dict = consultation.dict()
         consultation_obj = Consultation(**consultation_dict)
         
-        # Convert to dict for MongoDB
+        # Convert to dict for MongoDB with proper date handling
         consultation_data = consultation_obj.dict()
+        # Convert date objects to strings for MongoDB
+        if 'preferred_date' in consultation_data:
+            consultation_data['preferred_date'] = str(consultation_data['preferred_date'])
+        if 'created_at' in consultation_data:
+            consultation_data['created_at'] = consultation_data['created_at'].isoformat()
+        if 'updated_at' in consultation_data:
+            consultation_data['updated_at'] = consultation_data['updated_at'].isoformat()
         
         # Insert into database
         result = await db.consultations.insert_one(consultation_data)
