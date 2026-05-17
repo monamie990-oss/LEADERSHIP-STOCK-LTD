@@ -1,5 +1,5 @@
+# === GNU Autotools ===
 # http://www.gnu.org/software/automake
-
 Makefile.in
 /ar-lib
 /mdate-sh
@@ -10,7 +10,6 @@ Makefile.in
 .dirstamp
 
 # http://www.gnu.org/software/autoconf
-
 autom4te.cache
 /autoscan.log
 /autoscan-*.log
@@ -30,17 +29,14 @@ autom4te.cache
 /stamp-h1
 
 # https://www.gnu.org/software/libtool/
-
 /libtool
 /ltmain.sh
 .libs/
 
 # http://www.gnu.org/software/texinfo
-
 /texinfo.tex
 
 # http://www.gnu.org/software/m4/
-
 m4/libtool.m4
 m4/ltoptions.m4
 m4/ltsugar.m4
@@ -52,3 +48,88 @@ m4/lt~obsolete.m4
 # can automatically generate from config.status script
 # (which is called by configure script))
 Makefile
+
+# === Build Artifacts ===
+/build/
+/dist/
+/bin/
+/obj/
+*.o
+*.a
+*.so
+*.dylib
+*.dll
+*.exe
+*.class
+*.jar
+target/
+
+# === Package Management ===
+# Node.js
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+package-lock.json
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+.tox/
+venv/
+env/
+ENV/
+.venv
+
+# Ruby
+Gemfile.lock
+.bundle/
+
+# === IDEs & Editors ===
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+.project
+.classpath
+.c9/
+*.sublime-workspace
+
+# === Operating Systems ===
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+.directory
+
+# === Logs & Temporary Files ===
+*.log
+*.tmp
+*.temp
+*.bak
+*.swp
+.sass-cache/
+
+# === Environment Variables ===
+.env
+.env.local
+.env.*.local
+
+# === IDE Database Files ===
+.gradle/
+.m2/
+.ivy2/
